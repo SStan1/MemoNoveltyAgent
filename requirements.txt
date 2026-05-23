@@ -1,0 +1,15 @@
+arxiv
+fpdf2
+huggingface_hub
+matplotlib
+numpy
+openai
+pandas
+PyMuPDF
+PyPDF2
+ragflow-sdk
+requests
+scikit-learn
+streamlit
+torch
+transformers

@@ -1,0 +1,40 @@
+{
+  "paths": {
+    "questions_json": "../Data/Checklist_questions.json",
+    "output_base_dir": "../Results",
+    "report_path": "",
+    "report_paths": [],
+    "report_dirs": [],
+    "report_extensions": [
+      ".txt",
+      ".md",
+      ".markdown"
+    ],
+    "recursive": false
+  },
+  "evaluation_jobs": [],
+  "max_workers": 4,
+  "api_credentials": {
+    "openai_api_key": "",
+    "ragflow_api_key": ""
+  },
+  "api_endpoints": {
+    "openai_base_url": "https://api.openai.com/v1",
+    "ragflow_base_url": "http://localhost:9380"
+  },
+  "models": {
+    "query_generation_model": "",
+    "evaluation_model": ""
+  },
+  "rag": {
+    "page": 1,
+    "similarity_threshold": 0.2,
+    "vector_similarity_weight": 0.5,
+    "top_k": 2048,
+    "rerank_id": "Qwen3-Reranker-4B___VLLM",
+    "keyword": false,
+    "chunks_per_query": 10
+  },
+  "rerun_dimensions": [],
+  "rerun_dimension": null
+}

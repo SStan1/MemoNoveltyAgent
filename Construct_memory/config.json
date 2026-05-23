@@ -1,0 +1,32 @@
+{
+  "pdf_source": {
+    "pdf_dir": "./source_pdfs",
+    "filename_prefix": "",
+    "limit": 10000,
+    "metadata_jsonl_paths": []
+  },
+  "output": {
+    "output_dir": "../memory_output"
+  },
+  "api": {
+    "openai_api_key": "",
+    "openai_base_url": "https://api.openai.com/v1",
+    "openai_timeout": 240.0
+  },
+  "llm_config": {
+    "model": "",
+    "temperature": 0.7,
+    "max_retries": 5,
+    "retry_delay": 3
+  },
+  "prompts": {
+    "summary": {
+      "system_prompt": "You are an Expert Academic Paper Summarization Specialist with extensive experience in distilling complex research papers into clear, accurate, and comprehensive summaries. Your expertise spans multiple academic disciplines, and you excel at identifying the core contributions, methodologies, and significance of research work.\n\n**YOUR ROLE:**\nAs an Academic Summarization Specialist, you excel at:\n- Identifying the central research question and objectives of a paper\n- Extracting and articulating the key methodology and approach\n- Recognizing the main contributions and findings\n- Explaining technical concepts in accessible yet accurate terms\n- Defining uncommon abbreviations and domain-specific terminology\n\n**SUMMARIZATION GUIDELINES:**\nBased only on the provided text, generate a concise, factual summary in a single paragraph. Include:\n1. The paper's main task or research objective\n2. The core problems it aims to solve\n3. The key methods or approaches employed\n4. Brief explanations of uncommon abbreviations (e.g., define 'Hamilton-Jacobi-Bellman (HJB)' as the Hamilton-Jacobi-Bellman equation; skip common ones like CNN or NLP)\n\n**RESTRICTIONS:**\n- Do not add external knowledge, opinions, or any information not derived from the text\n- Maintain factual accuracy and objectivity\n- Focus on what the paper actually claims and demonstrates",
+      "user_prompt": "Generate the paper content summary as per the system instructions.\n\nPaper Name: {paper_name}\nPaper Text: {paper_text}"
+    },
+    "innovation_extraction": {
+      "system_prompt": "You are an expert research assistant specialized in analyzing academic papers. Your task is to extract ONLY the innovation claims explicitly stated or clearly implied by the authors in the provided paper. For each distinct innovation, you must (a) ensure it is an author-claimed contribution (avoid inventing), (b) merge duplicate/rephrased claims, (c) avoid splitting a single cohesive idea, and (d) classify it into EXACTLY one of: 1. Methodological/Algorithmic (a new or significantly improved algorithm, model, or technique for solving a computational problem), 2. Theoretical (a new formal theory, mathematical proof, or conceptual framework that deepens understanding), 3. System/Infrastructure (the design and evaluation of a novel software/hardware system or architecture with new capabilities), 4. Dataset/Benchmark (the creation of a new, high-quality dataset or benchmark enabling new research or more rigorous evaluation), 5. Empirical/Analytical (a non-obvious insight derived from rigorous experimentation or large-scale analysis), 6. Task/Application (the formulation of a new computational problem or the novel application of existing techniques to another domain). Output MUST be a numbered plain list containing a MAXIMUM of 5 innovations (e.g., 1., 2., 3., 4., 5.). No bullets, bold, tables, or JSON. No background statements that are not claimed as innovations. No speculative additions.",
+      "user_prompt": "Please analyze the full text of the paper '{paper_name}' below and extract the authors' claimed innovations. --- INSTRUCTIONS --- Identify the most significant distinct innovations the authors claim (look for phrases such as: we propose / we introduce / our contribution / novel / first / we design). Extract a MAXIMUM of 5 innovation claims. If the paper contains more than 5, select only the 5 most prominent and impactful contributions. Only include items supported by the text, merging duplicates and avoiding splitting cohesive ideas. For EACH innovation, provide in one paragraph: 1) First determine the classification using the categories defined in the system prompt, then give a concise summary of WHAT the innovation is (atomic, non-overlapping). 2) HOW (category-specific): If Methodological/Algorithmic: describe the structural/procedural mechanism (e.g., modified layer, new fusion sequence), the specific claimed benefit (e.g., accuracy, efficiency), and how evidence substantiates it (e.g., ablations, comparisons); If Theoretical: state the central theoretical claim (e.g., theorem, proof), its primary implications, and how rigor is established (e.g., formal proof) with enough detail to assess soundness; If System/Infrastructure: specify the real-world problem, how the system's design uniquely addresses it, and how practicality/benefit is demonstrated (e.g., benchmarks, case studies); If Dataset/Benchmark: specify the gap it fills (e.g., scale, diversity, annotation quality) and the new research questions or capabilities it enables; If Empirical/Analytical: state the central insight and whether it confirms/challenges prior beliefs, and how the experimental design supports validity; If Task/Application: explain why the task/application is important and non-obvious, how it is formulated and evaluated, and what makes applying existing methods to this domain innovative. --- FORMAT (MANDATORY) --- Use a plain numbered list: 1. 2. 3. ... (up to 5). Each item must follow this pattern: (Classification: <Category Name>) Innovation summary; HOW: ...; Evidence: ... Do NOT include quotes, references, section numbers, tables, or JSON. If NO valid innovation claims are present, output exactly: No explicit innovation claims identified. --- REMINDERS --- - Strictly limit your output to a MAXIMUM of 5 innovation points; - Do NOT invent architectures, metrics, datasets, or numbers not present in the text; - If a metric is mentioned without numbers, still include it (e.g., 'improves F1 over baseline'); otherwise use 'Not reported'. - Avoid redundancy: each innovation appears only once. You should describe each innovative point in as much detail as possible. --- FULL PAPER TEXT --- {paper_text} ---"
+    }
+  }
+}
