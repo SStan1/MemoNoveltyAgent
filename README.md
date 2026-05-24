@@ -38,7 +38,7 @@ The bundled memory files are stored under `memory_database/`. Because these file
 
 We provide a short demo video to illustrate the usage of the system:
 
-https://github.com/user-attachments/assets/89c18aa2-4809-4256-8336-4d0ed74844e1
+
 
 > **Note:** This demo is for demonstration purposes only. In real-world usage, the analysis process takes significantly longer than shown in the video, as it involves extensive literature crawling, retrieval, comparison, and validation.
 
