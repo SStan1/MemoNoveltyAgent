@@ -202,14 +202,3 @@ http://localhost:8502
 ```
 
 Use this website to inspect historical research themes, development trajectories, and the memory evidence used by the report-generation agents.
-
-## Evaluation Utility
-
-A lightweight checklist evaluator is included for report evaluation:
-
-```bash
-cd Evaluation/Checklist_evaluation/Code
-python Evaluation.py --config_path Evaluation.json
-```
-
-Edit `Evaluation.json` to point to the report folders you want to evaluate. The checklist questions are stored in `../Data/Checklist_questions.json`.

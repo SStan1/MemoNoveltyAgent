@@ -1,5 +1,0 @@
-# Large bundled memory artifacts should be stored with Git LFS.
-*.npy filter=lfs diff=lfs merge=lfs -text
-memory_database/final_memory_output/*.json filter=lfs diff=lfs merge=lfs -text
-memory_database/refined_memory_output/*.json filter=lfs diff=lfs merge=lfs -text
-memory_database/embedding_output/*.json filter=lfs diff=lfs merge=lfs -text
