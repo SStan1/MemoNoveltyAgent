@@ -1,6 +1,6 @@
 # MemoNoveltyAgent
 
-MemoNoveltyAgent is the official anonymous codebase for our paper:
+MemoNoveltyAgent is the codebase for our paper:
 
 > **MemoNoveltyAgent: A Historical Research Memory-Aware Agent Workflow for Paper Novelty Assessment**
 
@@ -35,7 +35,7 @@ The memory website can also be used independently. It lets users browse the memo
 The bundled memory files are stored under `memory_database/`. Because these files are large, Git LFS is recommended when publishing or cloning the repository.
 
 ## Demo
-
+https://github.com/user-attachments/assets/89c18aa2-4809-4256-8336-4d0ed74844e1
 We provide a short demo video to illustrate the usage of the system:
 
 
