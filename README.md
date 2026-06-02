@@ -201,3 +201,18 @@ http://localhost:8502
 ```
 
 Use this website to inspect historical research themes, development trajectories, and the memory evidence used by the report-generation agents.
+
+## Citation
+
+If you find MemoNoveltyAgent useful for your research, please consider citing our paper:
+
+```bibtex
+@misc{hou2026memonoveltyagenthistoricalresearchmemoryaware,
+      title={MemoNoveltyAgent: A Historical Research Memory-Aware Agent Workflow for Paper Novelty Assessment},
+      author={Jiajun Hou and Hexuan Deng and Wenxiang Jiao and Xuebo Liu and Xiaopeng Ke and Derek F. Wong and Min Zhang},
+      year={2026},
+      eprint={2603.20884},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2603.20884},
+}
