@@ -1,4 +1,5 @@
 # MemoNoveltyAgent
+🎉 **MemoNoveltyAgent has been accepted to the Findings of EMNLP 2026!**
 
 MemoNoveltyAgent is the codebase for our paper:
 
